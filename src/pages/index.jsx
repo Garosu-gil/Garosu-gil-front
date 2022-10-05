@@ -1,10 +1,17 @@
-import { Button } from "@nextui-org/react";
+import css from "styled-jsx/css";
+import { Hello } from "../components";
 import useStore from "../stores/storeContainer";
 
 const Home = () => {
   const { num, setNum } = useStore();
 
-  return <Button onClick={() => setNum(++num)}>{num}</Button>;
+  return (
+    <Hello
+      css={css`
+        background-color: purple;
+      `}
+    />
+  );
 };
 
 export default Home;

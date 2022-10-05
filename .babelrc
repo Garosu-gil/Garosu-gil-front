@@ -1,14 +1,12 @@
 {
-  "presets": [
+  "presets": ["next/babel", "@emotion/babel-preset-css-prop"],
+  "plugins": [
     [
-      "next/babel",
+      "@emotion",
       {
-        "preset-react": {
-          "runtime": "automatic",
-          "importSource": "@emotion/react"
-        }
+        "autoLabel": "dev-only",
+        "labelFormat": "[dirname]-[filename]-[local]"
       }
     ]
-  ],
-  "plugins": ["@emotion/babel-plugin"]
+  ]
 }
