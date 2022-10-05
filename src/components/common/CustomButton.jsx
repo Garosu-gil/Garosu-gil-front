@@ -3,16 +3,22 @@ import styled from "@emotion/styled";
 const Button = styled.button`
   border: none;
   color: #fff;
-  width: 150px;
-  height: 40px;
   background: #1363df;
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   cursor: pointer;
 `;
-const CustomButton = ({ text, event, type }) => {
+const CustomButton = ({ text, event, type, width, height, fontSize }) => {
   return (
-    <Button type={type} onClick={event}>
+    <Button
+      style={{
+        width: `${width}`,
+        height: `${height}`,
+        fontSize: `${fontSize}}`,
+      }}
+      type={type}
+      onClick={event}
+    >
       {text}
     </Button>
   );
