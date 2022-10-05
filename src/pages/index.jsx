@@ -1,10 +1,10 @@
-import { Hello } from "../components";
+import { Header } from "../components";
 import useStore from "../stores/storeContainer";
 
 const Home = () => {
   const { num, setNum } = useStore();
 
-  return <Hello />;
+  return <Header />;
 };
 
 export default Home;
