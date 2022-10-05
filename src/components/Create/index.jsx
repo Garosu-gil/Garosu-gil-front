@@ -1,4 +1,5 @@
 import { css } from "@emotion/react";
+import { CustomButton } from "../";
 import * as S from "./style";
 
 const Create = () => {
@@ -20,8 +21,10 @@ const Create = () => {
           <S.RightInputBox>
             <S.SmallTitle>설명</S.SmallTitle>
             <S.Textarea />
+            <S.Progress>0 / 100</S.Progress>
           </S.RightInputBox>
         </S.PageContent>
+        <CustomButton text="생성" event={() => {}} type="submit" />
       </S.CreateContent>
     </S.Create>
   );
