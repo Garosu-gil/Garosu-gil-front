@@ -13,6 +13,7 @@ export const CreateContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 `;
 
 export const PageTitle = styled.p`
@@ -46,6 +47,7 @@ export const RightInputBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 `;
 
 export const InputWrap = styled.div`
@@ -76,4 +78,14 @@ export const Textarea = styled.textarea`
   border-radius: 15px;
   font-size: 20px;
   padding: 20px;
+  resize: none;
+`;
+
+export const Progress = styled.p`
+  font-weight: 700;
+  font-size: 24px;
+  color: #747373;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
 `;
