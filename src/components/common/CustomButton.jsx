@@ -14,7 +14,7 @@ const CustomButton = ({ text, event, type, width, height, fontSize }) => {
       style={{
         width: `${width}`,
         height: `${height}`,
-        fontSize: `${fontSize}}`,
+        fontSize: `${fontSize}`,
       }}
       type={type}
       onClick={event}
