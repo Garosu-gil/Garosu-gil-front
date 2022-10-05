@@ -8,6 +8,7 @@ const Button = styled.button`
   background: #1363df;
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
+  cursor: pointer;
 `;
 const CustomButton = ({ text, event, type }) => {
   return (
