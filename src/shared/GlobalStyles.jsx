@@ -5,8 +5,13 @@ export default function GlobalStyle() {
   return (
     <Global
       styles={css`
-        padding: 0;
-        margin: 0;
+        ${emotionReset}
+
+        body {
+          padding: 0;
+          margin: 0;
+        }
+
         a {
           color: inherit;
           text-decoration: none;
