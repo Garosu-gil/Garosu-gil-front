@@ -1,4 +1,5 @@
 import React from "react";
+import CustomButton from "../../common/CustomButton";
 import * as C from "./Content.style";
 
 const data = [
@@ -33,9 +34,18 @@ const Content = () => {
           console.log(data);
           return (
             <C.ContentContainer key={i}>
-              <h4>{data.name}</h4>
-              <p>{data.content}</p>
-              <p>{data.date}</p>
+              <C.MainContentContainer>
+                <div>
+                  <h3>{data.name}</h3>
+                </div>
+                <div>
+                  <p>{data.content}</p>
+                </div>
+              </C.MainContentContainer>
+              <C.SeconedContentContainer>
+                <p>{data.date}</p>
+                <CustomButton text="번역" />
+              </C.SeconedContentContainer>
             </C.ContentContainer>
           );
         })}

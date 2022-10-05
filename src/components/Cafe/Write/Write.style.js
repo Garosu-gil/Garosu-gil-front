@@ -5,6 +5,7 @@ export const Conatiner = styled.div`
     font-weight: 700;
     font-size: 20px;
     margin-bottom: 15px;
+    margin-top: 15px;
   }
 `;
 
