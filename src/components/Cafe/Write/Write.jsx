@@ -23,7 +23,14 @@ const Write = () => {
           <p className="textLength">{text.length}/100</p>
         </W.TextAreaContainer>
         <W.ButtonContainer>
-          <CustomButton text={"작성"} type={"button"} event={buttonEvent} />
+          <CustomButton
+            text={"작성"}
+            type={"button"}
+            event={buttonEvent}
+            width="140px"
+            height="40px"
+            fontSize="10px"
+          />
         </W.ButtonContainer>
       </W.WriteContainer>
     </W.Conatiner>
