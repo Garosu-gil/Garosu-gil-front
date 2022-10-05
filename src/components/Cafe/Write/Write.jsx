@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import * as W from "./Write.style";
 import CustomButton from "../../common/CustomButton";
+
 const Write = () => {
   const buttonEvent = () => {
     console.log(1);

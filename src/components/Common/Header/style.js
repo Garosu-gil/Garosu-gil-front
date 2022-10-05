@@ -23,7 +23,7 @@ export const TitleDesc = styled.p`
 `;
 
 export const LogoWrapper = styled.div`
-  width: 230px;
+  width: 250px;
   display: flex;
   justify-content: space-between;
 `;

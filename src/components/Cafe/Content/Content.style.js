@@ -10,6 +10,7 @@ export const Container = styled.div`
 `;
 
 export const ContentContainer = styled.div`
+  padding: 0 25px 0 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -21,4 +22,20 @@ export const ContentContainer = styled.div`
   margin-bottom: 30px;
 `;
 
-export const mainContent = styled.div``;
+export const MainContentContainer = styled.div`
+  h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 75px;
+  /* justify-content: space-between; */
+`;
+
+export const SeconedContentContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+`;
