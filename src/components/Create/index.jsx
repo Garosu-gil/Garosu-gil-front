@@ -24,7 +24,14 @@ const Create = () => {
             <S.Progress>0 / 100</S.Progress>
           </S.RightInputBox>
         </S.PageContent>
-        <CustomButton text="생성" event={() => {}} type="submit" />
+        <CustomButton
+          width="240px"
+          height="70px"
+          fontSize="32px"
+          text="생성"
+          event={() => {}}
+          type="submit"
+        />
       </S.CreateContent>
     </S.Create>
   );
