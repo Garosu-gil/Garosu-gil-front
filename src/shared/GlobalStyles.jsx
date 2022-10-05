@@ -6,7 +6,6 @@ export default function GlobalStyle() {
     <Global
       styles={css`
         ${emotionReset}
-
         body {
           padding: 0;
           margin: 0;
