@@ -17,8 +17,6 @@ const categories = [
   "기타",
 ];
 
-const mockCafes = ["농구", "a", "a", "a", "a", "a", "a", "a", "a", "a"];
-
 const Main = () => {
   const [cafeList, setCafeList] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("게임");
