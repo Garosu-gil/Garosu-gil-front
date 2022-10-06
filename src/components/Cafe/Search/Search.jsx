@@ -3,25 +3,22 @@ import { useEffect } from "react";
 import { useState } from "react";
 import SmallSearchIcon from "../../../assets/SmallSearchIcon";
 import requestApi from "../../../libs/axios";
+import useStore from "../../../stores/storeContainer";
 import * as S from "./Search.style";
 const Search = () => {
   let searchText = "";
   const searchRef = useRef("");
-  const [list, setList] = useState([]);
+  const { list, setList } = useStore();
   const DELAY = 500;
   let timer;
 
   const getSearchData = async () => {
     console.log(list);
     const {
-      data: { result },
-    } = await requestApi.get(`search_cafe?word=${searchText}`);
-    setList(result);
+      data: { post_list },
+    } = await requestApi.get(`search_post?content=${searchText}`);
+    setList(post_list);
   };
-
-  useEffect(() => {
-    console.log(list);
-  }, [list]);
 
   const onChangeInput = () => {
     if (timer) clearTimeout(timer);

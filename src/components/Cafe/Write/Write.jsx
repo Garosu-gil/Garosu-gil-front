@@ -44,8 +44,6 @@ const Write = () => {
         <W.NameContainer>
           <h4>인플루언서 명</h4>
           <input type="text" placeholder="닉네임" ref={nameRef} />
-          {/* <h4>제목</h4> */}
-          {/* <input type="text" placeholder="제목" ref={titleRef} /> */}
         </W.NameContainer>
         <W.TextAreaContainer>
           <textarea

@@ -1,10 +1,15 @@
+import { useEffect } from "react";
 import { useState } from "react";
 import requestApi from "../../../../libs/axios";
+import useStore from "../../../../stores/storeContainer";
 import CustomButton from "../../../common/CustomButton";
 import * as C from "./style";
 
 const ContentContainer = ({ data }) => {
   const [translate, setTranslate] = useState("");
+
+  const { setShowDiction, setDictionData } = useStore();
+
   const translateLang = [
     { langSourse: "ko", lang: "한국어" },
     { langSourse: "zh-CN", lang: "中国话" },
@@ -12,20 +17,33 @@ const ContentContainer = ({ data }) => {
     { langSourse: "en", lang: "English" },
   ];
 
-  console.log(data.source);
   const getTranslate = async (transText, langSourse) => {
     try {
-      console.log(langSourse);
       const { data } = await requestApi.get(
         `/translate?target=${langSourse}&text=${transText}`
       );
-      console.log(data);
       setTranslate(data);
+
+      setShowDiction(true);
     } catch (e) {
       console.log(e);
     }
   };
 
+  const getDictionData = async () => {
+    try {
+      const {
+        data: { arr },
+      } = await requestApi.get(`find_dictionary?word=${translate}`);
+      setDictionData(arr);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  useEffect(() => {
+    console.log(translate);
+    translate && getDictionData();
+  }, [translate]);
   return (
     <C.ContentContainer>
       <C.MainContentContainer>
@@ -48,6 +66,7 @@ const ContentContainer = ({ data }) => {
             .filter((d) => data.source !== d.langSourse)
             .map((d, i) => (
               <CustomButton
+                margin
                 key={i}
                 event={() => getTranslate(data.content, d.langSourse)}
                 width="120px"
