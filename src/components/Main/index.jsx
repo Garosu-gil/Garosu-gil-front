@@ -2,7 +2,7 @@ import { Category, CafeCard } from "../";
 import * as S from "./style";
 import * as I from "../../assets";
 import { css } from "@emotion/react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import requestApi from "../../libs/axios";
 
@@ -20,6 +20,7 @@ const categories = [
 const Main = () => {
   const [cafeList, setCafeList] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("게임");
+  const searchRef = useRef();
 
   useEffect(() => {
     getCafeList();
@@ -33,6 +34,24 @@ const Main = () => {
       url: `/find_category?category=${selectedCategory}`,
     });
     setCafeList(result);
+  };
+
+  const searchCafe = async () => {
+    const keyword = searchRef.current.value;
+    if (!keyword) {
+      return alert("검색어를 입력해주세요.");
+    }
+    try {
+      const {
+        data: { result },
+      } = await requestApi({
+        method: "get",
+        url: `/search_cafe?word=${keyword}`,
+      });
+      setCafeList(result);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -54,7 +73,10 @@ const Main = () => {
                 />
               ))}
             </S.CategoryList>
-            <S.CategorySearch placeholder="내가 이야기하고 싶은 주제는?" />
+            <S.CategorySearch
+              placeholder="내가 이야기하고 싶은 주제는?"
+              ref={searchRef}
+            />
             <I.SearchIcon />
           </S.CategoryContentWrap>
         </S.CategoryWrap>
