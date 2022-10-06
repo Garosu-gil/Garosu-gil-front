@@ -61,7 +61,7 @@ const Main = () => {
           </S.CategoryContentWrap>
         </S.CategoryWrap>
         <S.CafeWrap>
-          <S.Title>운동 카페들</S.Title>
+          <S.Title>{selectedCategory} 카페들</S.Title>
           <S.CafeList>
             {cafeList?.map((cafe, index) => (
               <CafeCard
