@@ -91,6 +91,8 @@ export const CafeList = styled.div`
   grid-template-rows: 280px 280px;
   column-gap: 105px;
   row-gap: 30px;
+  position: relative;
+  top: 50px;
 `;
 
 export const AddCafePlus = styled.span`
