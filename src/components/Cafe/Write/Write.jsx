@@ -2,34 +2,51 @@ import React, { useRef } from "react";
 import { useState } from "react";
 import * as W from "./Write.style";
 import CustomButton from "../../Common/CustomButton";
+import requestApi from "../../../libs/axios";
+import { useRouter } from "next/router";
+
 
 const Write = () => {
-  const buttonEvent = () => {
-    console.log(1);
-  };
   const [text, setText] = useState("");
   const nameRef = useRef("");
-  let name = "";
+  // const titleRef = useRef("");
+  const router = useRouter();
+  const { name } = router.query;
+
+  const postContent = async () => {
+    const userName = nameRef.current.value;
+    // const title = titleRef.current.value;
+    const data = {
+      context: text,
+      cafeName: name,
+      nickName: userName,
+    };
+    console.log(data);
+    try {
+      await requestApi({
+        method: "post",
+        url: "/create_post",
+        data: data,
+      });
+      window.location.reload();
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   const onChangeTextArea = (e) => {
     setText(e.target.value);
   };
 
-  const onChangeName = () => {
-    name = nameRef.current.value;
-    console.log(name);
-  };
   return (
     <W.Conatiner>
       <h2>글작성</h2>
       <W.WriteContainer>
         <W.NameContainer>
-          <h4>닉네임</h4>
-          <input
-            type="text"
-            placeholder="닉네임"
-            ref={nameRef}
-            onChange={onChangeName}
-          />
+          <h4>인플루언서 명</h4>
+          <input type="text" placeholder="닉네임" ref={nameRef} />
+          {/* <h4>제목</h4> */}
+          {/* <input type="text" placeholder="제목" ref={titleRef} /> */}
         </W.NameContainer>
         <W.TextAreaContainer>
           <textarea
@@ -41,13 +58,14 @@ const Write = () => {
         </W.TextAreaContainer>
         <W.ButtonContainer>
           <CustomButton
-            text={"작성"}
-            type={"button"}
-            event={buttonEvent}
+            type="button"
+            event={postContent}
             width="140px"
             height="40px"
-            fontSize="10px"
-          />
+            fontSize="14px"
+          >
+            작성
+          </CustomButton>
         </W.ButtonContainer>
       </W.WriteContainer>
     </W.Conatiner>

@@ -8,10 +8,11 @@ const Button = styled.button`
   background: #1363df;
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
+  margin-left: 5px;
   cursor: pointer;
 `;
 
-const CustomButton = ({ text, event, type, width, height, fontSize }) => {
+const CustomButton = ({ children, event, type, width, height, fontSize }) => {
   return (
     <Button
       css={css`
@@ -22,7 +23,7 @@ const CustomButton = ({ text, event, type, width, height, fontSize }) => {
       type={type}
       onClick={event}
     >
-      {text}
+      {children}
     </Button>
   );
 };

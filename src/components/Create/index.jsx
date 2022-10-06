@@ -85,7 +85,9 @@ const Create = () => {
           text="생성"
           event={createCafe}
           type="submit"
-        />
+        >
+          생성
+        </CustomButton>
       </S.CreateContent>
     </S.Create>
   );
