@@ -37,10 +37,11 @@ export const CategoryContentWrap = styled.div`
 `;
 
 export const CategoryList = styled.div`
-  width: 1200px;
+  width: 1100px;
   height: 130px;
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   background: #ffffff;
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
@@ -65,4 +66,33 @@ export const CafeWrap = styled.div`
   width: 100%;
   position: relative;
   top: 50px;
+`;
+
+export const AddCafe = styled.a`
+  width: 370px;
+  height: 280px;
+  color: #ffffff;
+  background: #1363df;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  font-weight: 700;
+  font-size: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+`;
+
+export const CafeList = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: 370px 370px 370px 370px;
+  grid-template-rows: 280px 280px;
+  column-gap: 105px;
+  row-gap: 30px;
+`;
+
+export const AddCafePlus = styled.span`
+  font-size: 100px;
 `;
