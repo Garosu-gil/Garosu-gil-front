@@ -1,14 +1,16 @@
 import React from "react";
 import styled from "@emotion/styled";
+
 const Button = styled.button`
   border: none;
   color: #fff;
   background: #1363df;
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
+  margin-left: 5px;
   cursor: pointer;
 `;
-const CustomButton = ({ text, event, type, width, height, fontSize }) => {
+const CustomButton = ({ children, event, type, width, height, fontSize }) => {
   return (
     <Button
       style={{
@@ -19,7 +21,7 @@ const CustomButton = ({ text, event, type, width, height, fontSize }) => {
       type={type}
       onClick={event}
     >
-      {text}
+      {children}
     </Button>
   );
 };
