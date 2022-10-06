@@ -23,7 +23,7 @@ const Main = () => {
   const searchRef = useRef();
 
   useEffect(() => {
-    getCafeList();
+    selectedCategory && getCafeList();
   }, [selectedCategory]);
 
   const getCafeList = async () => {
@@ -48,9 +48,16 @@ const Main = () => {
         method: "get",
         url: `/search_cafe?word=${keyword}`,
       });
+      setSelectedCategory(null);
       setCafeList(result);
     } catch (error) {
       console.log(error);
+    }
+  };
+
+  const enterEvent = (e) => {
+    if (e.key === "Enter") {
+      searchCafe();
     }
   };
 
@@ -69,6 +76,7 @@ const Main = () => {
                   name={category}
                   event={() => {
                     setSelectedCategory(category);
+                    searchRef.current.value = "";
                   }}
                 />
               ))}
@@ -76,6 +84,7 @@ const Main = () => {
             <S.CategorySearch
               placeholder="내가 이야기하고 싶은 주제는?"
               ref={searchRef}
+              onKeyUp={enterEvent}
             />
             <I.SearchIcon />
           </S.CategoryContentWrap>
