@@ -1,2 +1,2 @@
 export { default as Logo } from "./Logo";
-export { default as Search } from "./SearchIcon";
+export { default as SmallSearchIcon } from "./SmallSearchIcon";

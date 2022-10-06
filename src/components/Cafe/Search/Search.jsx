@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import SearchIcon from "../../../assets/SearchIcon";
+import SmallSearchIcon from "../../../assets/SmallSearchIcon";
 import * as S from "./Search.style";
 const Search = () => {
   const [searchText, setSearchText] = useState("");
@@ -18,7 +18,7 @@ const Search = () => {
   return (
     <S.Container>
       <S.InputContainer>
-        <SearchIcon />
+        <SmallSearchIcon />
         <input type="text" onChange={onChangeInput} />
       </S.InputContainer>
     </S.Container>
