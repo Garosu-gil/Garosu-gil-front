@@ -3,7 +3,7 @@ import * as I from "../../../assets";
 import { css } from "@emotion/react";
 import Link from "next/link";
 
-const Header = () => {
+const Header = ({ cafeName }) => {
   return (
     <S.Header>
       <Link href="/">
@@ -19,7 +19,7 @@ const Header = () => {
           </S.LogoWrapper>
         </S.Title>
       </Link>
-      <S.CafeName>농구카페</S.CafeName>
+      {cafeName && <S.CafeName>{cafeName}</S.CafeName>}
     </S.Header>
   );
 };
