@@ -5,16 +5,6 @@ import useStore from "../../stores/storeContainer";
 import { useEffect } from "react";
 
 const cafe = () => {
-  // const { queryName, setQueryName } = useStore();
-  // const router = useRouter();
-  // const { name } = router.query;
-
-  // console.log(1, name);
-  // useEffect(() => {
-  //   setQueryName(name);
-  // console.log(queryName);
-  // }, []);
-
   return (
     <>
       <Cafe />
