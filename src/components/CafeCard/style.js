@@ -17,7 +17,7 @@ export const Name = styled.p`
 `;
 
 export const Description = styled.p`
-  font-size: 15px;
+  font-size: 20px;
   position: relative;
   top: 30px;
 `;

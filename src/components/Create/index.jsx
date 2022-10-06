@@ -36,7 +36,7 @@ const Create = () => {
     };
     try {
       await requestApi({ url: "/create_cafe", method: "post", data: data });
-      replace(`cafe/${title}`);
+      replace(`/cafe/${title}`);
     } catch (error) {
       console.log(error);
     }
