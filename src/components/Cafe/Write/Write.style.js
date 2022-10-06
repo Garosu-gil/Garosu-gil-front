@@ -10,15 +10,28 @@ export const Conatiner = styled.div`
 `;
 
 export const WriteContainer = styled.div`
+  padding: 15px;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   width: 1050px;
-  height: 150px;
+  height: 200px;
   background: #ffffff;
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
+`;
+
+export const NameContainer = styled.div`
+  display: flex;
+  h4 {
+    font-size: 15px;
+    margin-right: 10px;
+  }
+  input {
+    outline: none;
+    border: none;
+  }
 `;
 
 export const ButtonContainer = styled.div`

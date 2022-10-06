@@ -26,6 +26,9 @@ const data = [
 ];
 
 const Content = () => {
+  const onClickTrans = (e) => {
+    console.log(e);
+  };
   return (
     <>
       <C.Container>
@@ -44,7 +47,7 @@ const Content = () => {
               </C.MainContentContainer>
               <C.SeconedContentContainer>
                 <p>{data.date}</p>
-                <CustomButton text="번역" />
+                <CustomButton text="번역" event={onClickTrans} />
               </C.SeconedContentContainer>
             </C.ContentContainer>
           );

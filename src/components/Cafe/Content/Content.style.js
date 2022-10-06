@@ -10,12 +10,12 @@ export const Container = styled.div`
 `;
 
 export const ContentContainer = styled.div`
-  padding: 0 25px 0 25px;
+  padding: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: 1050px;
-  height: 150px;
+  height: auto;
   background: #ffffff;
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
