@@ -1,4 +1,5 @@
 import { css } from "@emotion/react";
+import { useRouter } from "next/router";
 import { useRef, useState } from "react";
 import { CustomButton, Category } from "../";
 import requestApi from "../../libs/axios";
@@ -19,6 +20,7 @@ const Create = () => {
   const [selected, setSelected] = useState("게임");
   const titleRef = useRef();
   const explanationRef = useRef();
+  const { replace } = useRouter();
 
   const createCafe = async () => {
     const title = titleRef.current?.value;
@@ -34,6 +36,7 @@ const Create = () => {
     };
     try {
       await requestApi({ url: "/create_cafe", method: "post", data: data });
+      replace(`cafe/${title}`);
     } catch (error) {
       console.log(error);
     }
