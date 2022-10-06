@@ -2,8 +2,9 @@ import { Category, CafeCard } from "../";
 import * as S from "./style";
 import * as I from "../../assets";
 import { css } from "@emotion/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import requestApi from "../../libs/axios";
 
 const categories = [
   "게임",
@@ -20,6 +21,22 @@ const mockCafes = ["농구", "a", "a", "a", "a", "a", "a", "a", "a", "a"];
 
 const Main = () => {
   const [selected, setSelected] = useState(0);
+  const [cafeList, setCafeList] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("게임");
+
+  useEffect(() => {
+    getCafeList();
+  }, [selectedCategory]);
+
+  const getCafeList = async () => {
+    const {
+      data: { result },
+    } = await requestApi({
+      method: "get",
+      url: `/find_category?category=${selectedCategory}`,
+    });
+    setCafeList(result);
+  };
 
   return (
     <S.Main>
@@ -34,7 +51,10 @@ const Main = () => {
                   key={index}
                   index={index}
                   name={category}
-                  event={() => setSelected(index)}
+                  event={() => {
+                    setSelected(index);
+                    setSelectedCategory(category);
+                  }}
                 />
               ))}
             </S.CategoryList>
@@ -45,7 +65,7 @@ const Main = () => {
         <S.CafeWrap>
           <S.Title>운동 카페들</S.Title>
           <S.CafeList>
-            {mockCafes.map((cafe, index) => (
+            {cafeList?.map((cafe, index) => (
               <CafeCard key={index} name={cafe} description={cafe} />
             ))}
             <Link href="/create">
