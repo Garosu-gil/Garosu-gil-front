@@ -1,1 +1,10 @@
 export { default as Logo } from "./Logo";
+export { default as SearchIcon } from "./SearchIcon";
+export { default as Broadcast } from "./Broadcast";
+export { default as Etc } from "./Etc";
+export { default as Hobby } from "./Hobby";
+export { default as IT } from "./IT";
+export { default as Life } from "./Life";
+export { default as Sport } from "./Sport";
+export { default as Trip } from "./Trip";
+export { default as Game } from "./Game";
