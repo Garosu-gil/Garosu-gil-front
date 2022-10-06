@@ -1,4 +1,5 @@
 export { default as Logo } from "./Logo";
+export { default as SmallSearchIcon } from "./SmallSearchIcon";
 export { default as SearchIcon } from "./SearchIcon";
 export { default as Broadcast } from "./Broadcast";
 export { default as Etc } from "./Etc";

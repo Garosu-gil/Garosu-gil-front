@@ -3,14 +3,16 @@ import Content from "./Content/Content";
 import Write from "./Write/Write";
 import styled from "@emotion/styled";
 import Header from "../Common/Header";
+import Search from "./Search/Search";
 const Container = styled.div`
-  margin-left: 85px;
+  width: 1;
 `;
 const Cafe = () => {
   return (
     <>
       <Header />
       <Container>
+        <Search />
         <Write />
         <Content />
       </Container>
