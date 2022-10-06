@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useRef } from "react";
 import React from "react";
-import CustomButton from "../../common/CustomButton";
+import CustomButton from "../../Common/CustomButton";
 import * as C from "./Content.style";
 
 const data = [

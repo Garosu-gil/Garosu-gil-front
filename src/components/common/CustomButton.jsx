@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
+import { css } from "@emotion/react";
+
 const Button = styled.button`
   border: none;
   color: #fff;
@@ -8,14 +10,15 @@ const Button = styled.button`
   border-radius: 15px;
   cursor: pointer;
 `;
+
 const CustomButton = ({ text, event, type, width, height, fontSize }) => {
   return (
     <Button
-      style={{
-        width: `${width}`,
-        height: `${height}`,
-        fontSize: `${fontSize}`,
-      }}
+      css={css`
+        width: ${width};
+        height: ${height};
+        font-size: ${fontSize};
+      `}
       type={type}
       onClick={event}
     >

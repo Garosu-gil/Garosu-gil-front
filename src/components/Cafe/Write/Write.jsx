@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useState } from "react";
 import * as W from "./Write.style";
-import CustomButton from "../../common/CustomButton";
+import CustomButton from "../../Common/CustomButton";
 
 const Write = () => {
   const buttonEvent = () => {
