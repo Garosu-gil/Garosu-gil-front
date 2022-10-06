@@ -17,10 +17,7 @@ const categories = [
   "기타",
 ];
 
-const mockCafes = ["농구", "a", "a", "a", "a", "a", "a", "a", "a", "a"];
-
 const Main = () => {
-  const [selected, setSelected] = useState(0);
   const [cafeList, setCafeList] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("게임");
 
@@ -47,12 +44,11 @@ const Main = () => {
             <S.CategoryList>
               {categories.map((category, index) => (
                 <Category
-                  selected={index === selected}
+                  selected={category === selectedCategory}
                   key={index}
                   index={index}
                   name={category}
                   event={() => {
-                    setSelected(index);
                     setSelectedCategory(category);
                   }}
                 />
@@ -63,10 +59,14 @@ const Main = () => {
           </S.CategoryContentWrap>
         </S.CategoryWrap>
         <S.CafeWrap>
-          <S.Title>운동 카페들</S.Title>
+          <S.Title>{selectedCategory} 카페들</S.Title>
           <S.CafeList>
             {cafeList?.map((cafe, index) => (
-              <CafeCard key={index} name={cafe} description={cafe} />
+              <CafeCard
+                key={index}
+                name={cafe.title}
+                description={cafe.explanation}
+              />
             ))}
             <Link href="/create">
               <S.AddCafe>
