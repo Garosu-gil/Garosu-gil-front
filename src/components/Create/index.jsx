@@ -28,10 +28,11 @@ const Create = () => {
           width="240px"
           height="70px"
           fontSize="32px"
-          text="생성"
           event={() => {}}
           type="submit"
-        />
+        >
+          생성
+        </CustomButton>
       </S.CreateContent>
     </S.Create>
   );
